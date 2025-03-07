@@ -1,0 +1,107 @@
+/* General Reset and Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make body full height, center everything */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Full-screen canvas that is responsive */
+canvas {
+    display: block;
+    margin: 20px 0;
+    border: 5px solid purple;
+    border-radius: 10px;
+    background-color: #ADD8E6; /* Light blue background */
+    max-width: 100%;  /* Ensures the canvas is responsive */
+    max-height: 100%; /* Ensures the canvas is responsive */
+}
+
+/* Position and style the total score text */
+#totalScore {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: black;
+    font-family: Arial, sans-serif;
+    display: none; /* Hidden initially */
+}
+
+/* Play Again button style */
+.button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    opacity: 0.8;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: none; /* Hidden initially */
+    transition: all 0.3s ease;
+}
+
+/* Hover and active states for the button */
+.button:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, 0.7); /* Glowing effect */
+}
+
+.button:active {
+    transform: translateX(-50%) scale(1.0);
+    transition: all 0.1s ease;
+}
+
+/* Ensuring mobile responsiveness */
+@media (max-width: 600px) {
+    /* On smaller screens, adjust font size and button padding */
+    #totalScore {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    canvas {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    /* On very small screens, scale down the canvas more */
+    canvas {
+        margin: 5px 0;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    #totalScore {
+        font-size: 20px;
+    }
+}
